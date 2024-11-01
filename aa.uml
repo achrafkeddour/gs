@@ -1,0 +1,11 @@
++----------------+           +------------------+           +-----------------+
+|    Router      |           | NetworkInterface |           |    Subnet       |
++----------------+           +------------------+           +-----------------+
+| - nom: String  |           | - nomInterface:  |           | - adresseIP:    |
+| - adresseIP:   |           | - adresseMAC:    |           | - masque:       |
+| - modèle:      |           | - adresseIP:     |           |                 |
+| - versionOS:   |           +------------------+           +-----------------+
++----------------+                  |                              |
+| + transmettrePaquet() |           |                              |
+| + ajouterInterface()  |-----------|-----------------------------+
++------------------------                appartient
