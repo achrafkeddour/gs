@@ -1,11 +1,52 @@
-+----------------+           +------------------+           +-----------------+
-|    Router      |           | NetworkInterface |           |    Subnet       |
-+----------------+           +------------------+           +-----------------+
-| - nom: String  |           | - nomInterface:  |           | - adresseIP:    |
-| - adresseIP:   |           | - adresseMAC:    |           | - masque:       |
-| - modèle:      |           | - adresseIP:     |           |                 |
-| - versionOS:   |           +------------------+           +-----------------+
-+----------------+                  |                              |
-| + transmettrePaquet() |           |                              |
-| + ajouterInterface()  |-----------|-----------------------------+
-+------------------------                appartient
++------------------------+
+|        Routeur         |
+|------------------------|
+| - nom : String         |
+| - adresseIP : String   |
+| - modèle : String      |
+| - versionOS : String   |
+|------------------------|
+| + transmettrePaquet(packet : Packet) |
+| + ajouterInterface(interface : NetworkInterface) |
++------------------------+
+           | 1                (Relation de composition : un Routeur possède plusieurs Interfaces Réseau)
+           | 1..*             
+           |                  
+           v                 
++------------------------+
+|   NetworkInterface     |
+|------------------------|
+| - nomInterface : String|
+| - adresseMAC : String  |
+| - adresseIP : String   |
+| - masque : String      |
+|------------------------|
+| + envoyerPaquet(packet : Packet)     |
+| + recevoirPaquet(packet : Packet)    |
++------------------------+
+           | 1                (Relation d'association : une Interface Réseau est connectée à un Sous-réseau)
+           |                  
+           v                  
++------------------------+
+|       SousReseau       |
+|------------------------|
+| - adresseIP : String   |
+| - masque : String      |
+|------------------------|
+| + ajouterRouteur(routeur : Router)   |
++------------------------+
+
+           ^
+           |               (Relation d'association : un Sous-réseau peut avoir plusieurs Routeurs)
+           | 0..*
+           |
++------------------------+
+|        Packet          |
+|------------------------|
+| - sourceIP : String    |
+| - destinationIP : String |
+| - données : String     |
+|------------------------|
+| + encapsuler()         |
+| + désencapsuler()      |
++------------------------+
