@@ -1,0 +1,79 @@
+To represent the system described, here is a simplified Data Flow Diagram (DFD), which illustrates the interactions between the different actors and the main processes. This DFD is of level 1, showing the main functionalities without going into too many specific details.
+
+Data Flow Diagram - Level 1
+
+1. Main Actors:
+
+Director
+
+Students
+
+Accommodation Manager
+
+Registration Manager
+
+Technical Manager
+
+Restaurant Manager
+
+Employees
+
+2. Main Processes:
+
+Account Management
+
+Room Management
+
+Restaurant Meal Management
+
+Incident and Maintenance Management
+
+Security Management
+
+Announcement Management
+
+Diagram Description
+
+1. Students and Employees
+
+Register and obtain an account via the Registration Manager.
+
+ Once the account is activated, students can request a room from the Accommodation Manager.
+
+Students can view the restaurant menu and receive notifications for special menus published by the Restaurant Manager.
+
+They can report an incident via an incident interface that is sent directly to the Technical Manager.
+
+Employees and residents also have access to announcements approved by the Director.
+
+2. Director
+
+Oversees security via a facial recognition dashboard.
+
+Receives reports on late employees and students with frequent late entries.
+
+Can send warning notifications and approve announcements.
+
+3. Registration Manager
+
+Creates and manages accounts for new residents and employees.
+
+Student accounts are created automatically from the Progress platform, while employee accounts are entered manually.
+
+4. Accommodation Manager
+
+Manages room requests: validates requests for single rooms (with medical certificate) and assigns rooms.
+
+ Notifies students about room assignments and manages renewal requests for existing residents.
+
+5. Restaurant Manager
+
+Updates the menu and manages food inventory.
+
+Publishes special event menus, visible to all users.
+
+6. Technical Manager
+
+Receives technical incident reports from students and employs a maintenance team to resolve issues.
+
+Informs residents when issues are resolved.
